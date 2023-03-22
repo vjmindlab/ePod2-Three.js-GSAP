@@ -1,0 +1,292 @@
+@font-face {
+    font-family:'TrimWeb';
+    src: url('TrimWebExtraBold.ttf') format('truetype');
+  }
+@font-face {
+    font-family:'Gotham';
+    src: url('GothamBook.ttf') format('truetype');
+  }
+* {
+    margin: 0;
+    padding: 0;
+}
+::-webkit-scrollbar {
+  width: 25px;
+  background:radial-gradient(circle at 50% 6.2%, rgb(22,22,22), rgba(12, 12, 12, 0.808) 6%),
+    linear-gradient(180deg, rgb(12, 12, 12) 5%, rgb(0, 21, 41) 60%, rgb(56, 0, 82) 120%);
+}
+
+::-webkit-scrollbar-track {
+  margin-block: 50px;
+  border-radius: 100vw;
+  box-shadow: inset 0 0 5px black;
+  background: linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(232,255,0,1) 50%, rgba(24,175,0,1) 100%);  
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 100vw;
+  background: #383838;
+  box-shadow:  0 0 5px black;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+html,
+body {
+    overflow-x: hidden;
+    height: 1000vh;
+    width: 100vw;
+    background:radial-gradient(circle at 50% 6.2%, rgb(22,22,22), rgba(12, 12, 12, 0.808) 6%),
+    linear-gradient(180deg, rgb(12, 12, 12) 5%, rgb(0, 21, 41) 60%, rgb(56, 0, 82) 120%);
+}
+h1 {
+    font-family: "TrimWeb";
+    font-size: 5vw;
+    font-weight: 900;
+    line-height: 1.5vw;
+}
+H2 {
+    font-family: "Gotham";
+	  font-size: 1.2vw;
+	  font-weight: 300;
+    line-height: 1.6vw;
+}
+.title {
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+    pointer-events: none;
+    opacity: 1;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    margin-top: 3rem;
+    width: 100vw;
+    text-align: center;
+}
+.subtitle {
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+    pointer-events: none;
+    opacity: 1;
+    position: fixed;
+    z-index: 1;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    top: 13%;
+    width: 100vw;
+    text-align: center;
+}
+.start {
+    height: 200vh;
+    width: 100vw;
+    position: relative;
+    z-index: 0;
+}
+.pods {
+    height: 200vh;
+    width: 100vw;
+    position: relative;
+    z-index: 0;
+}
+.led {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  z-index: 0;
+}
+.chip {
+  height: 300vh;
+  width: 100vw;
+  position: relative;
+  z-index: 0;
+}
+.orbit {
+  height: 200vh;
+  width: 100vw;
+  position: relative;
+  z-index: 0;
+}
+.podstext {
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+    pointer-events: none;
+    opacity: 0;
+    height: 300px;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    color: rgb(255, 255, 255);
+    transform: translateX(-50%);
+    text-align: right;
+}
+.ledtext {
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+    pointer-events: none;
+    opacity: 0;
+    height: 300px;
+    width: 350px;
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 52%;
+    color: rgb(255, 255, 255);
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+.chiptext {
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+  pointer-events: none;
+  opacity: 0;
+  height: 300px;
+  width: 600px;
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 47%;
+  color: rgb(255, 255, 255);
+  text-align: left;
+}
+#container {
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    outline: none;
+}
+.container2 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background-color: transparent;
+  max-width: 500px;
+  margin: 0 auto;
+  transition: opacity 0.5s;
+} 
+#progress {
+  font-size: 40px;
+  color: white;
+}
+#progress-bar {
+  width: 0%;
+  height: 2px;
+  background-color: red;
+  display: block;
+}
+#loaded-items {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f3f3f3;
+}
+#loaded-items:before {
+  content: 'Loaded assets:';
+  font-size: 16px;
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+#buttonmenu {
+  opacity: 0;
+  position: fixed;  
+  text-align: center;
+  left: 25%;
+  transform: translateX(-50%);
+  height: 55px;
+  width: auto;
+  top: 50%;  
+  z-index: 2;
+  color: white;
+}
+button {
+  outline-style: solid;
+  outline-width: 0px;
+  border: none;
+  margin: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+#color1 {
+  background: rgb(36,36,36);
+  background: linear-gradient(90deg, rgba(36,36,36,1) 0%, rgba(0,0,0,1) 58%);
+}
+#color2 {
+  background: rgb(71,71,71);
+background: linear-gradient(90deg, rgba(71,71,71,1) 0%, rgba(23,23,23,1) 58%);
+}
+#color3 {
+  background: rgb(209,209,209);
+  background: linear-gradient(90deg, rgba(209,209,209,1) 0%, rgba(156,156,156,1) 58%);
+}
+#color4 {
+  background: rgb(255,255,255);
+background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(215,190,105,1) 77%); 
+}
+#color5 {
+  background: rgb(213,235,255);
+  background: linear-gradient(90deg, rgba(213,235,255,1) 23%, rgba(0,92,175,1) 81%);
+}
+#color6 {
+  background: rgb(213,255,254);
+background: linear-gradient(90deg, rgba(213,255,254,1) 23%, rgba(0,255,255,1) 81%);
+}
+#color7 {
+  background: rgb(255,255,255);
+background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(224,191,184,1) 77%);
+}
+#colorid {
+  margin-top: 10px;
+  font-size: 1.8vw;
+  font-weight: 300;
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
+    10%,
+    30%,
+    50%,
+    70% {
+      transform: translateY(-8px);
+    }
+  
+    20%,
+    40%,
+    60% {
+      transform: translateY(8px);
+    }
+  
+    80% {
+      transform: translateY(6.4px);
+    }
+  
+    90% {
+      transform: translateY(-6.4px);
+    }
+  }
